@@ -5,7 +5,8 @@ const express = require('express');
 const app = express();
 const {todo} = require('./db');
 const {createTodo} = require('./types');
-
+const cors = require('cors');
+app.use(cors());
 app.use(express.json());
 
 app.get('/todos',async (req, res) => {
